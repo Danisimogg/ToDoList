@@ -1,6 +1,13 @@
 body {
+    padding: 50px;
     background-color: #eee;
     color: #555;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#root {
+    display: flex;
+    justify-content: flex;
 }
 
 .todolist {
@@ -77,7 +84,8 @@ footer {
     border-radius: 3px;
 }
 
-.filters li a.selected, .filters li a:hover {
+.filters li a.selected,
+.filters li a:hover {
     border-color: rgba(175, 47, 47, 0.1);
 }
 
@@ -103,7 +111,8 @@ footer .buttons {
     transition: 0.3s all;
 }
 
-.buttons .button:hover, .buttons .button.selected {
+.buttons .button:hover,
+.buttons .button.selected {
     opacity: 1;
     border-color: #ddd;
 }
