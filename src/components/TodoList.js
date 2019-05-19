@@ -38,6 +38,7 @@ this.setState({
                 toggleComplete={() => this.toggleComplete(todo.id)}
                 todo = {todo} />
             ))}
+            <div> todos left : {this.state.todos.filter(todo => !todo.complete).length}</div>
             </div>
         );
     }
