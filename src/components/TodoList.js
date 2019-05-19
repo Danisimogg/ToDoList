@@ -1,25 +1,44 @@
 import React from "react";
 import TodoForm from "./TodoForm";
-
+import Todo from "./Todo";
 export default class TodoList extends React.Component {
-   state ={
-       todos: []
-   };
-   
-   addTodo = (todo) =>{
-       
- this.setState({
-    todos: [todo, ...this.state.todos]
- });
-   };
+        state = {
+            todos: []
+        };
+
+        addTodo = (todo) => {
+            this.setState({
+                todos: [todo, ...this.state.todos]
+            });
+        };
+        toggleComplete = (id) =>{
+this.setState({
+    todos: this.state.todos.map(todo=>{
+        if (todo.id === id) {
+            //suppose to update
+            return {
+                ...todo,
+                complete: !todo.complete
+                // id:todo.id,
+                // text : todo.text,
+                // complete: !todo.complete
+            };
+        }else{
+            return todo;
+        }
+    })
+})
+        }
     render(){
         return (
         <div>
-            <TodoForm onSubmit={this.addTodo}/>
+            <TodoForm onSubmit={this.addTodo} />
             {this.state.todos.map(todo => (
-                <div key={todo.id}>{todo.text}</div>
+                <Todo key={todo.id} 
+                toggleComplete={() => this.toggleComplete(todo.id)}
+                todo = {todo} />
             ))}
-        </div>
+            </div>
         );
     }
 }

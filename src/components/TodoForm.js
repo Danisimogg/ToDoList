@@ -10,7 +10,7 @@ handleChange = event =>{
         [event.target.name]: event.target.value
     });
 };
-handleSubmit = (event) => {// submit 
+handleSubmit = event => {// submit 
     event.preventDefault();
     this.props.onSubmit({
         id : shortid.generate(),
