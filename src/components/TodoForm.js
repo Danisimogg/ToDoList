@@ -16,8 +16,11 @@ handleSubmit = (event) => {// submit
         id : shortid.generate(),
         text: this.state.text,
         complete:false
-    })
-}
+    });
+    this.setState({
+        text: ""
+    });
+};
     render() {
         return ( 
             <form onSubmit={this.handleSubmit}>
@@ -27,6 +30,7 @@ handleSubmit = (event) => {// submit
         onChange={this.handleChange}
          placeholder="todo..." 
          />
+         <button onClick={this.handleSubmit}> add to do</button>
          </form>
         );
     }
