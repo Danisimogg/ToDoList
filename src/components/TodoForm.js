@@ -30,7 +30,7 @@ handleSubmit = event => {// submit
         onChange={this.handleChange}
          placeholder="todo..." 
          />
-         <button onClick={this.handleSubmit}> add to do</button>
+         <button class="addToDo"onClick={this.handleSubmit}> add to do</button>
          </form>
         );
     }
